@@ -2,9 +2,9 @@
 include('../config.php');
 include('header.php');
 
-$d_id = $_GET['id'];
+$d_ID = $_GET['id'];
 
-$sql = "select * from drugs where id=$d_id";
+$sql = "select * from drugs where id=$d_ID";
 
 $result = mysqli_query($conn, $sql);
 

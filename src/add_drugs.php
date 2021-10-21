@@ -10,7 +10,7 @@
         <div class="col-sm-10">
             <input type="text" class="form-control" name="d_ID">
         </div>
-    </div>
+</div>
     <div class="mb-3 row">
         <label for="d_name" class="col-sm-2 col-form-label">Tên Thuốc</label>
         <div class="col-sm-10">

@@ -44,6 +44,7 @@ CREATE TABLE `drugs` (
   `quantity` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
 --
 -- Đang đổ dữ liệu cho bảng `drugs`
 --

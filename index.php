@@ -5,11 +5,11 @@
 <div class="container-fluid overflow-hidden">
     <div class="col-md-12">
         <div class="row table-main">
-            <h5 style = "text-weight: 500"> Các loại thuốc </h5>
+            <h5 style = "font-weight: 500"> Các loại thuốc </h5>
 
             <a href="add_drugs.php"><button type="button" class="btn btn-primary">Thêm thuốc</button></a>
-
-            <table class="table-responsive">
+            
+            <table class="table">
                 <thead class="table-light">
                     <tr>
                         <th scope="col">ID</th>
@@ -26,6 +26,9 @@
                         <th scope="col">Ngày hết hạn</th>
                         <th scope="col">Nơi sản xuất</th>
                         <th scope="col">Số lượng</th>
+                        <th scope="col">Sửa</th>
+                        <th scope="col">Xóa</th>
+
                     </tr>
                 </thead>
 
@@ -60,15 +63,18 @@
                             echo '<td>'.$row['expiration_date'].'</td>';
                             echo '<td>'.$row['place'].'</td>';
                             echo '<td>'.$row['quantity'].'</td>';
-
-                            echo '</tr>';
-                        }
+                            
+                            $id = $row['id'];
+                            echo'<td><a href="edit.php?id='.$row['id'].'"><button type="button"
+                                class="btn btn-success">Sửa</button></a></td>';
+                            echo'<td><a href="delete.php?id='.$id.'"><button type="button" class="btn btn-danger">Xóa</button></a></td>';
+                            echo "</tr>";   
+                       }
                     }
-                ?>
 
-            </tbody>
-            </table>
+            echo "</table>";
 
+    ?>
             <?php
             //Bước 4: Đóng kết nối
              mysqli_close($conn);
@@ -79,3 +85,4 @@
 
 <?php include('footer.php') ?>
 
+    
