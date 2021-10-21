@@ -1,23 +1,30 @@
 <?php
-include('../connect/connect.php');
+include('../config.php');
 include('header.php');
 
-$emp_id = $_GET['id'];
+$d_id = $_GET['id'];
 
-$sql = "select * from `db_employees` where emp_id=$emp_id";
+$sql = "select * from drugs where id=$d_id";
 
 $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result)){
     while($row = mysqli_fetch_assoc($result)){
-        $name = $row['emp_name'];
-                            
-        $position = $row['emp_position'];
-        $phone = $row['emp_phone'];
-         $mobile = $row['emp_mobile'];
-        $email = $row['emp_email'];
-        $office_id = $row['office_id'];
-
+        $d_ID = $row['id'];
+        $d_name = $row['name'];
+        $d_type = $row['type'];
+        $d_barcode = $row['barcode'];
+        $d_dose = $row['dose'];
+        $d_code = $row['code'];
+        $d_cost_price = $row['cost_price'];
+        $d_selling_price = $row['selling_price'];
+        $d_expiry = $row['expiry'];
+        $d_company_name = $row['company_name'];
+        $d_production_date = $row['production_date'];
+        $d_expiration_date = $row['expiration_date'];
+        $d_place = $row['place'];
+        $d_quantity = $row['quantity'];
+       
         }
 }
 ?>
